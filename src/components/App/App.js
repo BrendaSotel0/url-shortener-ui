@@ -18,6 +18,10 @@ export class App extends Component {
     .then((data) => this.setState({urls: data.urls}))
   }
 
+  addURL = (newURL) => {
+    this.setState({urls: [...this.state.urls, newURL]})
+  }
+
   render() {
     return (
       <main className="App">
