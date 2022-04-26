@@ -38,7 +38,7 @@ class UrlForm extends Component {
   render() {
     return (
       <form>
-        <input
+        <input className="title-input"
           type='text'
           placeholder='Title...'
           name='title'
@@ -46,7 +46,7 @@ class UrlForm extends Component {
           onChange={e => this.handleNameChange(e)}
         />
 
-        <input
+        <input className="long-url-input"
           type='text'
           placeholder='URL to Shorten...'
           name='long_url'
