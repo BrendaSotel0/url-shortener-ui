@@ -29,9 +29,11 @@ describe('load page flow', () => {
   it('should see the inputted card', () => {
     cy.get('.title-input').type('Newest Title')
     cy.get('.long-url-input').type('newesttitle.com')
+    cy.intercept('POST', 'http://localhost:3001/api/v1/urls', { fixture: 'addedData.json' })
+    cy.visit('http://localhost:3000')
     cy.get('.submit-button').click()
     cy.get('.url').last()
-    .contains('Newest Title')
+    .contains('POST')
   })
 
 })
