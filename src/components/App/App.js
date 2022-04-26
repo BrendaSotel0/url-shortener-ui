@@ -3,6 +3,7 @@ import './App.css';
 import { getUrls } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
+import { logDOM } from '@testing-library/react';
 
 export class App extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ export class App extends Component {
   }
 
   componentDidMount() {
+    return getUrls()
+    .then((data) => this.setState({urls: data.urls}))
   }
 
   render() {
