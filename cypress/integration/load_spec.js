@@ -21,9 +21,11 @@ describe('load page flow', () => {
   it('should be able to add a url card and see it displayed', () => {
     cy.get('.title-input').type('Fresh Title')
     cy.get('.long-url-input').type('freshtitle.com')
+    cy.intercept('POST', 'http://localhost:3001/api/v1/urls', { fixture: 'addedData.json' })
+    cy.visit('http://localhost:3000')
     cy.get('.submit-button').click()
     cy.get('.url').last()
-    .contains('Fresh Title')
+    .contains('POST')
   })
 
   it('should see the inputted card', () => {
