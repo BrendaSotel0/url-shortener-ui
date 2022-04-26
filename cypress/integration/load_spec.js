@@ -18,10 +18,20 @@ describe('load page flow', () => {
     cy.get('.long-url-input')
   })
 
-  it('should be able to add a url card', () => {
+  it('should be able to add a url card and see it displayed', () => {
     cy.get('.title-input').type('Fresh Title')
     cy.get('.long-url-input').type('freshtitle.com')
     cy.get('.submit-button').click()
+    cy.get('.url').last()
+    .contains('Fresh Title')
+  })
+
+  it('should see the inputted card', () => {
+    cy.get('.title-input').type('Newest Title')
+    cy.get('.long-url-input').type('newesttitle.com')
+    cy.get('.submit-button').click()
+    cy.get('.url').last()
+    .contains('Newest Title')
   })
 
 })
