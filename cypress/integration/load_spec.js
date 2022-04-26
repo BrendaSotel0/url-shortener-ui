@@ -4,14 +4,24 @@ describe('load page flow', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('should have a header on load', () => {
+  it('should have a header and two cards on load', () => {
     cy.contains('URL Shortener')
+    cy.get('.url').first()
+    .contains('UI')
+    cy.get('.url').last()
+    .contains('API')
   })
 
   it('should see a form on load', () => {
     cy.get('form')
     cy.get('.title-input')
     cy.get('.long-url-input')
+  })
+
+  it('should be able to add a url card', () => {
+    cy.get('.title-input').type('Fresh Title')
+    cy.get('.long-url-input').type('freshtitle.com')
+    cy.get('.submit-button').click()
   })
 
 })

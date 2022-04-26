@@ -1,14 +1,16 @@
-[
-  {
-    "id": 7,
-    "long_url": "https://github.com/BrendaSotel0/url-shortener-ui",
-     "short_url": "http://localhost:3001/useshorturl/7"
-,    "title": "UI"
-  },
-  {
-    "id": 13,
-    "long_url": "https://github.com/turingschool-examples/url-shortener-api",
-    "short_url": "http://localhost:3001/useshorturl/13",
-    "title": "API"
-  }
-]
+{
+  "urls": [
+    {
+      "id": 7,
+      "long_url": "https://github.com/BrendaSotel0/url-shortener-ui",
+      "short_url": "http://localhost:3001/useshorturl/7",
+      "title": "UI"
+    },
+    {
+      "id": 13,
+      "long_url": "https://github.com/turingschool-examples/url-shortener-api",
+      "short_url": "http://localhost:3001/useshorturl/13",
+      "title": "API"
+    }
+  ]
+}
